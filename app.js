@@ -4,6 +4,7 @@ const path = require('path');
 const logger = require('morgan');
 const passport = require('passport');
 const config = require('./config');
+const mongoose = require('mongoose');
 
 // routers
 const indexRouter = require('./routes/index');
@@ -11,8 +12,6 @@ const usersRouter = require('./routes/users');
 const campsiteRouter = require('./routes/campsiteRouter');
 const promotionRouter = require('./routes/promotionRouter');
 const partnerRouter = require('./routes/partnerRouter');
-
-const mongoose = require('mongoose');
 
 const url = config.mongoUrl;
 const connect = mongoose.connect(url, {
