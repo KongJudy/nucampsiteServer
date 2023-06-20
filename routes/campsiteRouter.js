@@ -137,29 +137,6 @@ campsiteRouter
       `PUT operation not supported on /campsites/${req.params.campsiteId}/comments`
     );
   });
-// .delete(authenticate.verifyUser, (req, res, next) => {
-//   Campsite.findById(req.params.campsiteId)
-//     .then((campsite) => {
-//       if (campsite) {
-//         for (let i = campsite.comments.length - 1; i >= 0; i--) {
-//           campsite.comments.id(campsite.comments[i]._id).remove();
-//         }
-//         campsite
-//           .save()
-//           .then((campsite) => {
-//             res.statusCode = 200;
-//             res.setHeader('Content-Type', 'application/json');
-//             res.json(campsite);
-//           })
-//           .catch((err) => next(err));
-//       } else {
-//         err = new Error(`Campsite ${req.params.campsiteId} not found`);
-//         err.status = 404;
-//         return next(err);
-//       }
-//     })
-//     .catch((err) => next(err));
-// });
 
 campsiteRouter
   .route('/:campsiteId/comments/:commentId')
